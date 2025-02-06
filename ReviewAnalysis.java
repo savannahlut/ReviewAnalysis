@@ -1,11 +1,13 @@
+import java.util.ArrayList;
+
 public class ReviewAnalysis {
 
     /** All user reviews to be included in this analysis */
     private Review[] allReviews;
 
     /** Initializes allReviews to contain all the Review objects to be analyzed */
-    public ReviewAnalysis()
-    { /* implementation not shown */ }
+    public ReviewAnalysis(Review a, Review b, Review c, Review d, Review e)
+    { allReviews = new Review[] {a, b, c, d, e,};}
 
     /** Returns a double representing the average rating of all the Review objects to be
     * analyzed, as described in part (a)
@@ -28,5 +30,15 @@ public class ReviewAnalysis {
     * No element of allReviews is null.
     * Postcondition: allReviews is unchanged. */
     public ArrayList<String> collectComments()
-    { /* to be implemented in part (b) */ }
+    {
+        ArrayList<String> newComments = new ArrayList<String>();
+        for(Review x : allReviews){
+            for(int i = 0; i < x.getComment().length(); i++){
+                if(x.getComment().charAt(i) == '!'){
+                    newComments.add( /*what goes here? index? */ + "-" + x.getComment());
+                }
+            }
+        }
+        return newComments;
+    }
 }

@@ -1,5 +1,5 @@
 public class Review{
-private int rating;
+    private int rating;
     private String comment;
     /** Precondition: r >= 0; c is not null.*/
     public Review(int r, String c)
