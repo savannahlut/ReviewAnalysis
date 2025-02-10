@@ -7,7 +7,9 @@ public class ReviewAnalysis {
 
     /** Initializes allReviews to contain all the Review objects to be analyzed */
     public ReviewAnalysis(Review a, Review b, Review c, Review d, Review e)
-    { allReviews = new Review[] {a, b, c, d, e,};}
+    { 
+        allReviews = new Review[]{a, b, c, d, e};
+    }
 
     /** Returns a double representing the average rating of all the Review objects to be
     * analyzed, as described in part (a)
@@ -32,10 +34,10 @@ public class ReviewAnalysis {
     public ArrayList<String> collectComments()
     {
         ArrayList<String> newComments = new ArrayList<String>();
-        for(Review x : allReviews){
-            for(int i = 0; i < x.getComment().length(); i++){
-                if(x.getComment().charAt(i) == '!'){
-                    newComments.add( /*what goes here? index? */ + "-" + x.getComment());
+        for(int x = 0; x < allReviews.length; x++){
+            for(int i = 0; i < allReviews[x].getComment().length(); i++){
+                if(allReviews[x].getComment().charAt(i) == '!'){
+                    newComments.add(x + "-" + allReviews[x].getComment());
                 }
             }
         }
